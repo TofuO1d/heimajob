@@ -11,7 +11,8 @@ const showToast = (msg) => {
 
 //用户登录校验函数
 const checkToken = () => {
-    const { token } = JSON.parse(localStorage.getItem('userMsg'))
+    const data = localStorage.getItem('userMsg')?localStorage.getItem('userMsg'):{}
+    const { token } = JSON.parse(data)
     if(!token) {
         showToast('请先登录！')
         setTimeout(()=>{
