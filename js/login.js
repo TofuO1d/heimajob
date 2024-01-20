@@ -31,7 +31,8 @@
      showToast(res.data.message)
      // 5. 跳转页面
      setTimeout(() => {
-       location.href = './index.html'
+        checkToken()
+        location.href = './index.html'
      }, 1500)
    } catch (err) {
      return showToast(err.response.data.message)

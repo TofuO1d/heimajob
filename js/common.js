@@ -8,3 +8,14 @@ const showToast = (msg) => {
     toastObj.show()
     toastMsg.innerHTML = `${msg}`
 }
+
+//用户登录校验函数
+const checkToken = () => {
+    const { token } = JSON.parse(localStorage.getItem('userMsg'))
+    if(!token) {
+        showToast('请先登录！')
+        setTimeout(()=>{
+            location.href = './login.html'
+        },1500)
+    }
+}
