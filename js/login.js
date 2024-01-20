@@ -25,16 +25,16 @@
      const res = await axios.post('/login', data)
      // 4. 如果成功则本地存储用户名(?)
      const obj = {} // 存储用户名及其他
-     obj.username = res.data.data.username
-     obj.token = res.data.data.token
+     obj.username = res.data.username
+     obj.token = res.data.token
      localStorage.setItem('userMsg', JSON.stringify(obj))
-     showToast(res.data.message)
+     showToast(res.message)
      // 5. 跳转页面
      setTimeout(() => {
         checkToken()
         location.href = './index.html'
      }, 1500)
    } catch (err) {
-     return showToast(err.response.data.message)
+     return showToast(err.response.message)
    }
  })
