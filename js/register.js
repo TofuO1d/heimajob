@@ -14,7 +14,7 @@ registerBtn.addEventListener('click',async function(){
     try {
         const res = await axios.post('/register',{username,password})
         console.log(res);
-        showToast(res.data.message)
+        showToast(res.message)
         setTimeout(function(){
             location.href = './login.html'
         },1500)
